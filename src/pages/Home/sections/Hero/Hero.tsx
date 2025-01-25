@@ -14,6 +14,13 @@ const Hero = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.up('xs')]: { //<=mobile
+            paddingTop: "100px"
+        },
+
+        [theme.breakpoints.up('md')]: { //<=other
+            paddingTop:"0"
+        }
       }));
       
       const StyledImg = styled("img")(({}) => ({
@@ -41,7 +48,7 @@ const Hero = () => {
                         <Typography color="primary.contrastText" variant="h1" textAlign="center">Anne Melo</Typography>
                         <Grid container display="flex" justifyContent="center" spacing={3}>
                             <Grid item xs={12} md={4} display="flex" justifyContent={"center"}>
-                                <StyledButton>
+                                <StyledButton onClick={()=> console.log("dowloand")}>
                                     <FileDownloadIcon />
                                     <Typography>
                                         Dowloand CV
@@ -50,7 +57,7 @@ const Hero = () => {
                                 </StyledButton>
                             </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent={"center"}>
-                                <StyledButton>
+                                <StyledButton onClick={()=> console.log("contact")}>
                                     <AlternateEmailIcon /> 
                                         <Typography>
                                             Contact me
